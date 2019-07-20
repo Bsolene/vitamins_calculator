@@ -6,8 +6,8 @@ FactoryBot.define do
       name { 'food_intake' }
     end
 
-    trait :activity do
-      name { 'activity' }
+    trait :activity_level do
+      name { 'activity_level' }
     end
 
     trait :recipe do
