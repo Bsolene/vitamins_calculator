@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe ActivityNutrients::Create do
   let(:user) { create(:user) }
-  let(:vitamin_C) { create(:nutrient, :vitamin_C) }
+  let(:vitamin_c) { create(:nutrient, :vitamin_c) }
   let(:recipe) { create(:activity, :recipe, user: user) }
 
 
   subject do
     described_class.call(
-      nutrient: vitamin_C,
+      nutrient: vitamin_c,
       activity: recipe,
       amount: amount
     )

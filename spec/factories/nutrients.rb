@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :nutrient do
-    trait :vitamin_C do
-      name { 'vitamin_C' }
+    trait :vitamin_c do
+      name { 'vitamin_c' }
     end
 
-    trait :vitamin_D3 do
-      name { 'vitamin_D3' }
+    trait :vitamin_d3 do
+      name { 'vitamin_d3' }
     end
 
     trait :iron do

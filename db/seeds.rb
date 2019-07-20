@@ -1,4 +1,4 @@
-NUTRIENTS = %w[vitamin_C vitamin_D3 iron].freeze
+NUTRIENTS = %w[vitamin_c vitamin_d3 iron].freeze
 
 puts '~> Looking for existing nutrients..'
 nutrients_names = Nutrient.all.pluck(:name)
