@@ -14,7 +14,7 @@ module Activities
       activity_level = day_activities.where(name: 'activity_level').first
       raise 'no activity level for this date' if activity_level.nil?
 
-      recipe_activity = Activity.create(user: user, name: 'recipe')
+      recipe_activity = Activities::Create.call(user: user, name: 'recipe')
 
       Nutrient::NUTRIENT_TYPES.map do |nutrient_type|
         nutrient = Nutrient.find_by(name: nutrient_type)
