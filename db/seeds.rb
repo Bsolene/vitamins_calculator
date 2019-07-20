@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+NUTRIENTS = %w[vitamin_C vitamin_D3 iron].freeze
+
+puts '~> Looking for existing nutrients..'
+nutrients_names = Nutrient.all.pluck(:name)
+
+puts '~> Creating new nutrients..'
+NUTRIENTS.map do |nutrient_name|
+  next if nutrients_names.include?(nutrient_name)
+
+  Nutrient.create!(name: nutrient_name)
+  puts "~> #{nutrient_name} created"
+end
