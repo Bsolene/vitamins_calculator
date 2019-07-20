@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_074833) do
+ActiveRecord::Schema.define(version: 2019_07_20_075417) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2019_07_20_074833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "activity_nutrients", force: :cascade do |t|
+    t.integer "activity_id"
+    t.integer "nutrient_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_activity_nutrients_on_activity_id"
+    t.index ["nutrient_id"], name: "index_activity_nutrients_on_nutrient_id"
   end
 
   create_table "nutrients", force: :cascade do |t|
